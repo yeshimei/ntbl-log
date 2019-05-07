@@ -1,0 +1,27 @@
+{
+  "name": "@ntbl/log",
+  "version": "1.1.2",
+  "description": "一个内置 loading 动画的命令行文本输入工具。",
+  "main": "index.js",
+  "author": {
+    "name": "夜是美"
+  },
+  "keywords": [
+    "log",
+    "cli",
+    "shell"
+  ],
+  "bugs": {
+    "url": "https://github.com/yeshimei/ntbl-log/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeshimei/ntbl-log.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "cli-spinners": "^2.1.0",
+    "log-update": "^3.2.0"
+  }
+}
