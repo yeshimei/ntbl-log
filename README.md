@@ -34,14 +34,14 @@ setTimeout(() => log.stop(), 2000)
 ```
 
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/b.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044104.gif)
 
 ```js
 // 或者,保留动画最后一帧
 setTimeout(() => log.stop(true), 2000)
 ```
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/d.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044125.gif)
 
 
 ```js
@@ -54,7 +54,8 @@ log.clear()
 # Frames
 
 
-![](https://github.com/sindresorhus/cli-spinners/raw/master/screenshot.svg?sanitize=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531050832.svg)
+
 
 log 内置了所有 [cli-spinners](https://github.com/sindresorhus/cli-spinners) 动画。
 
@@ -88,7 +89,7 @@ log.request.downloading()
 setTimeout(() => log.request.completed(), 2000)
 ```
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/c.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044116.gif)
 
 
 自定义状态还可以是一个对象，满足某些个性化的设置。
@@ -104,7 +105,7 @@ Log.register('request', {
 })
 ```
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/f.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044138.gif)
 
 
 默认情况下，当你更换状态时内部会使用 `log.stop()`  停止并清除**上一个状态的消息**。如果你需要保留它，你可以这么做。
@@ -131,7 +132,7 @@ setTimeout(() => log.request.downloading(), 500)
 setTimeout(() => log.request.completed(), 2000)
 ```
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/a.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044042.gif)
 
 
 如果，你的消息是动态生成的，你还可以传入参数。
@@ -151,4 +152,17 @@ log.request.downloading('www.baidu.com')
 setTimeout(() => log.request.completed(), 2000)
 ```
 
-![](https://github.com/yeshimei/ntbl-log/blob/master/images/e.gif?raw=true)
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531044132.gif)
+
+
+# 开启或关闭
+
+log 支持一键开启或关闭文本输出了，这是为测试进行优化的功能。
+
+log 在输出文本时会更新命令行界面，当进行排错或测试时，使用 `console` 等函数输出的文本会被覆盖。为了保证其正常使用，我们可以：
+
+```js
+log.config.disabled = true
+```
+
+现在，当前实例所有的文本输出都被禁用了。

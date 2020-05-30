@@ -23,6 +23,10 @@ function Log(options = {}) {
   this.timer = null
   this.options = {}
   this._nextSave = null
+  this.config = {
+    // 是否禁用当前实例的文本消息输出
+    disabled: false
+  }
 }
 
 Log.prototype = {
@@ -56,6 +60,8 @@ Log.prototype = {
 
 
   start (options, ...args) {
+    if (this.config.disabled) return 
+
     if (typeof options === 'string') return this.log(options)
 
 
@@ -89,6 +95,7 @@ Log.prototype = {
   },
 
   log (text) {
+    if (this.config.disabled) return 
     logUpdate(text)
   },
 
