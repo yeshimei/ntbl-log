@@ -6,7 +6,9 @@
 
 - [Installation](#Installation)
 - [Frames](#Frames)
+- [自定义动画](#自定义动画)
 - [状态器](#状态器)
+- [开启或关闭](#开启或关闭)
 
 # Installation
 
@@ -53,7 +55,6 @@ log.clear()
 
 # Frames
 
-
 ![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200531050832.svg)
 
 
@@ -68,6 +69,40 @@ Log({
 })
 ```
 
+# 自定义动画
+
+您还可以发挥无穷的想象力为 `log` 添加有趣生动的自定义动画。
+
+比如，我们添加一个 `步枪` 动画。
+
+```js
+const log = require('@ntbl/log')()
+
+log.addSpinner('rifle', {
+  "interval": 80,
+  "frames": [
+    "▅        ",
+    "▅︻      ",
+    "▅︻┳┷    ",
+    "▅︻┳┷一一",
+    "▅︻┳┷一  ",
+    "▅︻┳┷    ",
+    "▅︻      ",
+    "▅        ",
+  ]
+})
+
+log.start({
+  name: 'rifle',
+  color: 'red',
+  text: data => `${data.frame} a custom rifle`
+})
+```
+
+![](https://yeshimei.oss-cn-beijing.aliyuncs.com/20200605234302.gif)
+
+
+
 # 状态器
 
 状态器帮助你把分散在不同时刻的消息集中在一起，并以语义化的方式进行使用。
@@ -81,7 +116,6 @@ log.register('request', {
   downloading: data => `${data.frame} downloading data from a remote server`,
   completed: '√ download completed',
 })
-
 
 // 使用
 log.request.downloading()

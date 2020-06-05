@@ -15,9 +15,10 @@ function Log(options = {}) {
     }
   }
 
+  this.spinners = cliSpinners
   this.name = options.name || 'dots'
   this.color = options.color || 'green'
-  this.spinner = cliSpinners[this.name]
+  this.spinner = this.spinners[this.name]
   this.interval = options.interval || this.spinner.interval
   this.index = 0
   this.timer = null
@@ -113,6 +114,10 @@ Log.prototype = {
         this.start(options, ...args)
       }.bind(this)
     }
+  },
+
+  addSpinner (name, spinner) {
+    this.spinners[name] = spinner
   }
 }
 
