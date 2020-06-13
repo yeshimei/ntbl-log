@@ -1,4 +1,4 @@
-const log = require('../index')()
+const log = require('../dist/log.cjs.js')()
 
 // 在实例化之前，注册一个消息
 log.register('request', {

@@ -1,4 +1,4 @@
-const log = require('../index')()
+const log = require('../dist/log.cjs.js')()
 
 log.config.disabled = true;
 

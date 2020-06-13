@@ -1,12 +1,9 @@
-const cliSpinners = require('cli-spinners')
-const logUpdate = require('log-update')
-const chalk = require('chalk')
-
-module.exports = Log
+import cliSpinners from 'cli-spinners'
+import logUpdate from 'log-update'
+import chalk from 'chalk'
 
 
-
-function Log(options = {}) {
+export default function Log(options = {}) {
   if (!(this instanceof Log)) return new Log(options)
 
   if (typeof  options === 'string') {
@@ -15,6 +12,7 @@ function Log(options = {}) {
     }
   }
 
+  this._version = '__VERSION__'
   this.spinners = cliSpinners
   this.name = options.name || 'dots'
   this.color = options.color || 'green'

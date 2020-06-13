@@ -1,4 +1,4 @@
-const log = require('../index')()
+const log = require('../dist/log.cjs.js')()
 
 log.register('request', {
   // 传入的参数都会保存在 args 中

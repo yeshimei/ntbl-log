@@ -1,4 +1,4 @@
-const Log = require('../index')
+const Log = require('../dist/log.cjs.js')
 
 const log = Log({
   name: 'dots',   // 动画类型
